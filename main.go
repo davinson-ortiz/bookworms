@@ -18,8 +18,11 @@ func main() {
 			"failed to load bookworms: %s\n", err)
 		os.Exit(1)
 	}
+	fmt.Println("\n=== LIBROS COMUNES ===")
 	commonBooks := findCommonBooks(bookworms)
-
-	fmt.Println("Here are books in common:")
 	displayBooks(commonBooks)
+
+	fmt.Println("\n=== RECOMENDACIONES ===")
+	recommendations := recommendOtherBooks(bookworms)
+	displayRecommendations(recommendations)
 }
